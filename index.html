@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Media Swirl</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Media Swirl</h1>
+    <h3>Fill this page with media you'll love.</h3> 
+    <p>Enter any combination of movies, music, shows, books, authors, or games to fill the page with recommendations. You can also specify what type of media you want for each item searched, though it is not required. Separate each item with a comma.</p>
+    <p>i.e: movie:The Godfather, music:Megadeth, game:Super Mario 64, author:Hemmingway</p>
+
+    <!-- <div class="row">
+      <form id="search-term">
+        <input id="query" type="text" name="foo">
+        <input type="submit" value="Submit">
+        <input id="clear" type="button" value="Clear">
+      </form>
+    </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="search-term" class="input-group">
+          <input type="text" id="query" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-md-12 results">
+      <p>Select any single result to automatically add it to the searchbar. The recommendations will multiply!</p>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="apps/app.js"></script>
+</body>
+</html>

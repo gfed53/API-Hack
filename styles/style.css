@@ -1,0 +1,16 @@
+.container {
+	max-width: 60em;
+	text-align: center;
+	margin: 0 auto;
+	border: 7px ridge LightGrey;
+	border-radius: 1em;
+}
+
+.row {
+	margin-bottom: 2em;
+}
+
+.results {
+	margin-top: 4em;
+}
+
