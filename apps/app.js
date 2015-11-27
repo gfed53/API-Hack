@@ -1,11 +1,21 @@
 $(function(){
-	$('#search-term .btn').on('click', function(e){
+	$('.dropdown-menu').on('click', 'a', function(e){
+		e.preventDefault();
+		console.log("Clicked on");
+		yourChoice = $(this).html();
+		$('.dropdown-toggle').html(yourChoice);
+	});
+	$('#search-term .btn-search').on('click', function(e){
 		e.preventDefault();
 		var searchTerm = $('#query').val();
-		getRequest(searchTerm);	
+		var searchTermWithCat = yourChoice+":"+searchTerm;
+		console.log(searchTermWithCat);
+		getRequest(searchTermWithCat);	
 	});
 
 });
+
+var yourChoice;
 
 var showResponse = function(response) {
 	
@@ -48,6 +58,7 @@ var getRequest = function(searchTerm){
 	console.log(url);
 	$.getJSON(url, params, function(data){
 		console.log(data);
+		
 		$.each(data.Similar.Results, function(i, item) {
 			console.log(item.Name);
 			var response = showResponse(item);
