@@ -10,6 +10,7 @@ $(function(){
 		var searchTerm = $('#query').val();
 		var searchTermWithCat = yourChoice+":"+searchTerm;
 		console.log(searchTermWithCat);
+		$('th').show();
 		getRequest(searchTermWithCat);	
 	});
 
@@ -40,7 +41,7 @@ var showResponse = function(response) {
 	// set the add-to-searchbar button
 	var add = result2.find('.btn-add');
 	$(add).on('click', function(){
-		$('#query').val($('#query').val()+response.Type+":"+response.Name+", ");
+		$('#query').val($('#query').val()+response.Name+", ");
 	});
 
 	return [result1, result2];
@@ -58,7 +59,11 @@ var getRequest = function(searchTerm){
 	console.log(url);
 	$.getJSON(url, params, function(data){
 		console.log(data);
-		
+		$.each(data.Similar.Info, function(i, item) {
+			console.log(item.Name);
+			var response = showResponse(item);
+			$('.table-searched').append(response);
+		})
 		$.each(data.Similar.Results, function(i, item) {
 			console.log(item.Name);
 			var response = showResponse(item);
