@@ -1,9 +1,29 @@
+body {
+	background-color: #333;
+	font-family: "Bitter";
+}
+
 .container {
 	max-width: 60em;
 	text-align: center;
 	margin: 0 auto;
-	border: 7px ridge LightGrey;
+	border: 7px ridge bisque;
+	background-color: #D9EDF7;
 	border-radius: 1em;
+}
+
+h1 {
+	font-family: "Kaushan Script";
+	font-size: 5em;
+	text-transform: uppercase;
+	text-shadow: 2px 4px 4px grey;
+}
+
+h3 {
+	font-family: "Arimo";
+	font-size: 2em;
+	font-weight: 600;
+
 }
 
 .row {

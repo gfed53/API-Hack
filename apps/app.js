@@ -1,18 +1,29 @@
 $(function(){
+	console.log($('.dropdown-toggle').html());
 	$('.dropdown-menu').on('click', 'a', function(e){
 		e.preventDefault();
 		console.log("Clicked on");
 		yourChoice = $(this).html();
 		$('.dropdown-toggle').html(yourChoice);
+		console.log($('.dropdown-toggle').html());
 	});
+
 	$('#search-term .btn-search').on('click', function(e){
 		e.preventDefault();
-		var searchTerm = $('#query').val();
-		var searchTermWithCat = yourChoice+":"+searchTerm;
-		console.log(searchTermWithCat);
 		$('th').show();
-		getRequest(searchTermWithCat);	
-	});
+		var searchTerm = $('#query').val();
+		if($('.dropdown-toggle').html()==="Everything"){
+			console.log(searchTerm);
+			// getRequest(searchTerm);
+		} else if(yourChoice === undefined){
+			alert("Please select type");
+		} else{
+			var searchTermWithCat = yourChoice+":"+searchTerm;
+			console.log(searchTermWithCat);
+		// getRequest(searchTermWithCat);
+	}
+
+});
 
 });
 
@@ -66,8 +77,11 @@ var getRequest = function(searchTerm){
 		})
 		$.each(data.Similar.Results, function(i, item) {
 			console.log(item.Name);
-			var response = showResponse(item);
-			$('.table-result').append(response);
+			// var yourChoiceLower = yourChoice.toLowerCase();
+			// if(item.Type === yourChoiceLower){
+				var response = showResponse(item);
+				$('.table-result').append(response);
+			// }
 		});
 	});
 	// console.log(sampObject);
