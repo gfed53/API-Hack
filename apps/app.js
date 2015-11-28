@@ -15,18 +15,19 @@ $(function(){
 		if($('.dropdown-toggle').html()==="Everything"){
 			console.log(searchTerm);
 			$('th').show();
-			// getRequest(searchTerm);
+			getRequest(searchTerm);
 		} else if(yourChoice === undefined){
 			alert("Please select type");
 		} else{
 			$('th').show();
 			var searchTermWithCat = yourChoice+":"+searchTerm;
 			console.log(searchTermWithCat);
-			// getRequest(searchTermWithCat);
-	}
-
-});
-
+			getRequest(searchTermWithCat);
+		}
+	});
+	$('.btn-directions').on('click', function(){
+		$('.directions').toggleClass('hidden');
+	})
 });
 
 var yourChoice;
@@ -61,35 +62,35 @@ var showResponse = function(response) {
 };
 
 var getRequest = function(searchTerm){
-	var params = {
-		q: searchTerm,
-		k: "179625-Educatio-EE7ZUYWY",
-		info: 1
-		
-	};
-	url= "https://www.tastekid.com/api/similar?callback=?";
-	console.log(params);
-	console.log(url);
-	$.getJSON(url, params, function(data){
-		console.log(data);
-		$.each(data.Similar.Info, function(i, item) {
-			console.log(item.Name);
-			var response = showResponse(item);
-			$('.table-searched').append(response);
-		})
-		$.each(data.Similar.Results, function(i, item) {
-			console.log(item.Name);
-			// var yourChoiceLower = yourChoice.toLowerCase();
-			// if(item.Type === yourChoiceLower){
-				var response = showResponse(item);
-				$('.table-result').append(response);
-			// }
-		});
-	});
-	// console.log(sampObject);
-	// var response = showResponse(sampObject);
-	// $('.table-result').append(response);
-	$('#query').val('');
+	// var params = {
+	// 	q: searchTerm,
+	// 	k: "179625-Educatio-EE7ZUYWY",
+	// 	info: 1
+
+	// };
+	// url= "https://www.tastekid.com/api/similar?callback=?";
+	// console.log(params);
+	// console.log(url);
+	// $.getJSON(url, params, function(data){
+	// 	console.log(data);
+	// 	$.each(data.Similar.Info, function(i, item) {
+	// 		console.log(item.Name);
+	// 		var response = showResponse(item);
+	// 		$('.table-searched').append(response);
+	// 	})
+	// 	$.each(data.Similar.Results, function(i, item) {
+	// 		console.log(item.Name);
+	// 		// var yourChoiceLower = yourChoice.toLowerCase();
+	// 		// if(item.Type === yourChoiceLower){
+	// 			var response = showResponse(item);
+	// 			$('.table-result').append(response);
+	// 		// }
+	// 	});
+	// });
+console.log(sampObject);
+var response = showResponse(sampObject);
+$('.table-result').append(response);
+$('#query').val('');
 };
 
 var sampObject = {
