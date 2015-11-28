@@ -50,3 +50,13 @@ th {
 	background-color: bisque;
 }
 
+@media (max-width: 513px) {
+	
+	h1 {
+		font-size: 3.5em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
+

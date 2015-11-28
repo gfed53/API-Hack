@@ -10,17 +10,19 @@ $(function(){
 
 	$('#search-term .btn-search').on('click', function(e){
 		e.preventDefault();
-		$('th').show();
+		
 		var searchTerm = $('#query').val();
 		if($('.dropdown-toggle').html()==="Everything"){
 			console.log(searchTerm);
+			$('th').show();
 			// getRequest(searchTerm);
 		} else if(yourChoice === undefined){
 			alert("Please select type");
 		} else{
+			$('th').show();
 			var searchTermWithCat = yourChoice+":"+searchTerm;
 			console.log(searchTermWithCat);
-		// getRequest(searchTermWithCat);
+			// getRequest(searchTermWithCat);
 	}
 
 });
