@@ -53,6 +53,22 @@ th {
 	background-color: bisque;
 }
 
+footer {
+	margin-top: 2em;
+	color: white;
+	text-align: center;
+}
+
+footer a {
+	color: lightblue;
+	border-radius: .4em;
+	padding: .2em;
+}
+
+footer a:hover {
+	background-color: white;
+}
+
 @media (max-width: 513px) {
 	
 	h1 {
