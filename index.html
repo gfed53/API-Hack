@@ -20,10 +20,10 @@
     <h3>Fill this page with media you'll love.</h3>
     <button class="btn btn-default btn-directions" type="button">Directions</button>
     <div class="hidden directions">
-    <p>Select any category ('Everything' counts as one!) and make your search. You can search more than one item at a time. If you want to search items of multiple categories at once, make sure 'Everything' is selected.</p>
-    <p>While 'Everything' is selected, you can give your search parameters prefixes for clarification if so desired.</p>
-    <p>i.e: movie:The Godfather, music:Megadeth, game:Super Mario 64, author:Hemmingway</p>
-    <p>Click the 'Add' button on any single result to automatically add it to the searchbar. The recommendations will multiply!</p>
+      <p>Select any category ('Everything' counts as one!) and make your search. You can search more than one item at a time. If you want to search items of multiple categories at once, make sure 'Everything' is selected.</p>
+      <p>While 'Everything' is selected, you can give your search parameters prefixes for clarification if so desired.</p>
+      <p>i.e: movie:The Godfather, music:Megadeth, game:Super Mario 64, author:Hemmingway</p>
+      <p>Click the 'Add' button on any single result to automatically add it to the searchbar. The recommendations will multiply!</p>
     </div>
 
     <!-- <div class="row">
@@ -35,24 +35,26 @@
     </div> -->
     <div class="row">
       <div class="col-md-12">
-        <div id="search-term" class="input-group">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Type<span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a id="everything" href="">Everything</a></li>
-              <li><a id="music" href="">Music</a></li>
-              <li><a id="movie" href="">Movie</a></li>
-              <li><a id="show" href="">Show</a></li>
-              <li><a id="game" href="">Game</a></li>
-              <li><a id="author" href="">Author</a></li>
-              <li><a id="book" href="">Book</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <input type="text" id="query" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default btn-search" type="submit">Go!</button>
-          </span>
-        </div><!-- /input-group -->
+        <form id="search-term">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Type<span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a id="everything" href="">Everything</a></li>
+                <li><a id="music" href="">Music</a></li>
+                <li><a id="movie" href="">Movie</a></li>
+                <li><a id="show" href="">Show</a></li>
+                <li><a id="game" href="">Game</a></li>
+                <li><a id="author" href="">Author</a></li>
+                <li><a id="book" href="">Book</a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="text" id="query" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-search" type="submit">Go!</button>
+            </span>
+          </div>
+        </form><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
     </div>
     <div class="row">

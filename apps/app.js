@@ -87,10 +87,10 @@ var getRequest = function(searchTerm){
 			// }
 		});
 	});
-// console.log(sampObject);
-// var response = showResponse(sampObject);
-// $('.table-result').append(response);
-$('#query').val('');
+	// console.log(sampObject);
+	// var response = showResponse(sampObject);
+	// $('.table-result').append(response);
+	$('#query').val('');
 };
 
 var sampObject = {
