@@ -64,36 +64,39 @@ var showResponse = function(response) {
 };
 
 var getRequest = function(searchTerm){
-	// var params = {
-	// 	q: searchTerm,
-	// 	k: "179625-Educatio-EE7ZUYWY",
-	// 	info: 1
+	var params = {
+		q: searchTerm,
+		k: "179625-Educatio-EE7ZUYWY",
+		info: 1
 
-	// };
-	// url= "https://www.tastekid.com/api/similar?callback=?";
-	// console.log(params);
-	// console.log(url);
-	// $.getJSON(url, params, function(data){
-	// 	console.log(data);
-	// 	$.each(data.Similar.Info, function(i, item) {
-	// 		console.log(item.Name);
-	// 		var response = showResponse(item);
-	// 		$('.searched').append(response);
-	// 	})
-	// 	$.each(data.Similar.Results, function(i, item) {
-	// 		console.log(item.Name);
-	// 		// var yourChoiceLower = yourChoice.toLowerCase();
-	// 		// if(item.Type === yourChoiceLower){
-	// 			var response = showResponse(item);
-	// 			$('.results').append(response);
-	// 		// }
-	// 	});
-	// });
-	console.log(sampObject);
-	var response = showResponse(sampObject);
-	$('.results').append(response);
+	};
+	url= "https://www.tastekid.com/api/similar?callback=?";
+	console.log(params);
+	console.log(url);
+	$.getJSON(url, params, function(data){
+		console.log(data);
+		$.each(data.Similar.Info, function(i, item) {
+			console.log(item.Name);
+			var response = showResponse(item);
+			$('.searched').append(response);
+			$('.accordion').accordion("refresh");
+		})
+		$.each(data.Similar.Results, function(i, item) {
+			console.log(item.Name);
+			// var yourChoiceLower = yourChoice.toLowerCase();
+			// if(item.Type === yourChoiceLower){
+				var response = showResponse(item);
+				$('.results').append(response);
+				$('.accordion').accordion("refresh");
+			// }
+		});
+	});
+	// console.log(sampObject);
+	// var response = showResponse(sampObject);
+	// $('.results').append(response);
+	// $('.accordion').accordion("refresh");
 	$('#query').val('');
-	$('.accordion').accordion("refresh");
+	
 };
 
 var sampObject = {
