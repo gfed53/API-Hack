@@ -1,5 +1,6 @@
 $(function(){
 	console.log($('.dropdown-toggle').html());
+	$('.accordion').accordion({collapsible: true});
 	$('.dropdown-menu').on('click', 'a', function(e){
 		e.preventDefault();
 		console.log("Clicked on");
@@ -14,12 +15,12 @@ $(function(){
 		var searchTerm = $('#query').val();
 		if($('.dropdown-toggle').html()==="Everything"){
 			console.log(searchTerm);
-			$('th').show();
+			$('.output h3').show();
 			getRequest(searchTerm);
 		} else if(yourChoice === undefined){
 			alert("Please select type");
 		} else{
-			$('th').show();
+			$('.output h3').show();
 			var searchTermWithCat = yourChoice+":"+searchTerm;
 			console.log(searchTermWithCat);
 			getRequest(searchTermWithCat);
@@ -28,7 +29,7 @@ $(function(){
 	$('.btn-directions').on('click', function(){
 		$('.directions').toggleClass('hidden');
 	});
-	$('table').accordion({collapsible: true});
+	
 });
 
 var yourChoice;
@@ -36,7 +37,7 @@ var yourChoice;
 var showResponse = function(response) {
 	
 	// clone our result-pt1 template code
-	var result1 = $('.templates .result-pt1').clone();
+	var result1 = $('.templates h4').clone();
 	
 	// Set the title/name of response
 	var name = result1.find('.result-name');
@@ -47,7 +48,7 @@ var showResponse = function(response) {
 	type.html(response.Type);
 
 	// clone our result-pt2 template code
-	var result2 = $('.templates .result-pt2').clone();
+	var result2 = $('.templates .acc-content').clone();
 
 	// set the blurb
 	var blurb = result2.find('.result-blurb');
@@ -77,21 +78,22 @@ var getRequest = function(searchTerm){
 	// 	$.each(data.Similar.Info, function(i, item) {
 	// 		console.log(item.Name);
 	// 		var response = showResponse(item);
-	// 		$('.table-searched').append(response);
+	// 		$('.searched').append(response);
 	// 	})
 	// 	$.each(data.Similar.Results, function(i, item) {
 	// 		console.log(item.Name);
 	// 		// var yourChoiceLower = yourChoice.toLowerCase();
 	// 		// if(item.Type === yourChoiceLower){
 	// 			var response = showResponse(item);
-	// 			$('.table-result').append(response);
+	// 			$('.results').append(response);
 	// 		// }
 	// 	});
 	// });
 	console.log(sampObject);
 	var response = showResponse(sampObject);
-	$('.table-result').append(response);
+	$('.results').append(response);
 	$('#query').val('');
+	$('.accordion').accordion("refresh");
 };
 
 var sampObject = {

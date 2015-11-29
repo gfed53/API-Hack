@@ -33,7 +33,7 @@ h3 {
 	margin-bottom: 2em;
 }
 
-.results {
+.output {
 	margin-top: 4em;
 	text-align: left;
 }
@@ -46,12 +46,12 @@ h3 {
 	display: none;
 }
 
-/* th {
+.output h3 {
 	display: none;
 	text-align: center;
 	font-size: 1.5em;
-	background-color: bisque;
-} */
+	/*background-color: bisque;*/
+}
 
 footer {
 	margin-top: 2em;
