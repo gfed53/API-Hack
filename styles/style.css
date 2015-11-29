@@ -46,12 +46,12 @@ h3 {
 	display: none;
 }
 
-th {
+/* th {
 	display: none;
 	text-align: center;
 	font-size: 1.5em;
 	background-color: bisque;
-}
+} */
 
 footer {
 	margin-top: 2em;

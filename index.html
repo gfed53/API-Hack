@@ -11,6 +11,7 @@
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+  <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Arimo|Bitter' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -59,44 +60,42 @@
     </div>
     <div class="row">
       <div class="col-md-12 results">
-        
-        <table class="table table-striped table-searched">
-          <tr>
-            <th colspan="2">You searched for:</th>
-          </tr>
-
-        </table>
-        <table class="table table-striped table-result">
-          <tr>
-            <th colspan="2">Results</th>
-          </tr>
-
-        </table>
+        <h3>You searched for:</h3>
+        <div id="accordion"> 
+        </div>
+        <h3>Results</h3>
+        <div id="accordion">
+        </div>
       </div>
     </div>
     <div class="row templates hidden">
-      <table class="table-template">
-        <tr class="result-pt1">
-          <td class="result-name">Name</td>
-          <td class="result-type">Type</td>
-        </tr>
-        <tr class="result-pt2">
-          <td class="result-blurb">Blurb</td>
-          <td class="result-add">
-            <button class="btn btn-default btn-add" type="button">Add</button>
-          </td>
-        </tr>
-      </table>
-    </div>
+      <div class = "acc-header">
+        <p class="result-name">Name</p>
+        <p class="result-type">Type</p>
+      </div>
+      <div class="acc-content">
+        <p class="result-blurb">Blurb</p>
+        <span class="result-add">
+          <button class="btn btn-default btn-add" type="button">Add</button>
+        </span>
+        
+      </tr>
+      <tr class="result-pt2 ui-accordion-content">
+        
+      </tr>
+    </table>
   </div>
-  <footer>
-    <p>By Gregory Federico</p>
-    <p>Powered by the <a href="http://www.tastekid.com">TASTEKiD</a> API</p>
-  </footer>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="apps/app.js"></script>
+</div>
+<footer>
+  <p>By Gregory Federico</p>
+  <p>Powered by the <a href="http://www.tastekid.com">TASTEKiD</a> API</p>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script type="text/javascript" src="apps/app.js"></script>
 </body>
 </html>
