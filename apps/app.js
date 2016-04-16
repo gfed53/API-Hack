@@ -1,12 +1,9 @@
 $(function(){
-	console.log($('.dropdown-toggle').html());
 	$('.accordion').accordion({collapsible: true});
 	$('.dropdown-menu').on('click', 'a', function(e){
 		e.preventDefault();
-		console.log("Clicked on");
 		yourChoice = $(this).html();
 		$('.dropdown-toggle').html(yourChoice);
-		console.log($('.dropdown-toggle').html());
 	});
 
 	$('#search-term .btn-search').on('click', function(e){
@@ -14,7 +11,6 @@ $(function(){
 		
 		var searchTerm = $('#query').val();
 		if($('.dropdown-toggle').html()==="Everything"){
-			console.log(searchTerm);
 			$('.output h3').show();
 			getRequest(searchTerm);
 		} else if(yourChoice === undefined){
@@ -22,7 +18,6 @@ $(function(){
 		} else{
 			$('.output h3').show();
 			var searchTermWithCat = yourChoice+":"+searchTerm;
-			console.log(searchTermWithCat);
 			getRequest(searchTermWithCat);
 		}
 	});
@@ -71,42 +66,20 @@ var getRequest = function(searchTerm){
 
 	};
 	url= "https://www.tastekid.com/api/similar?callback=?";
-	console.log(params);
-	console.log(url);
 	$.getJSON(url, params, function(data){
-		console.log(data);
 		$.each(data.Similar.Info, function(i, item) {
-			console.log(item.Name);
 			var response = showResponse(item);
 			$('.searched').append(response);
 			$('.accordion').accordion("refresh");
 		})
 		$.each(data.Similar.Results, function(i, item) {
-			console.log(item.Name);
-			// var yourChoiceLower = yourChoice.toLowerCase();
-			// if(item.Type === yourChoiceLower){
 				var response = showResponse(item);
 				$('.results').append(response);
 				$('.accordion').accordion("refresh");
-			// }
 		});
 	});
-	// console.log(sampObject);
-	// var response = showResponse(sampObject);
-	// $('.results').append(response);
-	// $('.accordion').accordion("refresh");
 	$('#query').val('');
 	
-};
-
-var sampObject = {
-	Name: "Scarface",
-	Type: "movie",
-	wTeaser: "Scarface is a 1983 American crime drama film directed by Brian De Palma and written by Oliver Stone, a remake of the 1932 film of the same name. The film tells the story of Cuban refugee Tony Montana (Al Pacino) who arrives in 1980s Miami with nothing and rises to become a powerful drug kingpin. The cast also features Mary Elizabeth Mastrantonio, Steven Bauer, and Michelle Pfeiffer.Scarface was released on December 9, 1983 and was a box office success, grossing $44 million. Initial critical reception was mixed, with criticism over excessive violence and profanity and graphic drug usage. Some Cuban expatriates in Miami objected to the film's portrayal of Cubans as criminals and drug traffickers. In the years that followed, the film has received reappraisal from critics and is considered by some to be one of the best within the mob film genre. Screenwriters and directors such as Martin Scorsese have praised the film, and it has since resulted in many cultural references, such as in rap music, comic books, and video games.",
-	wUrl: "http://en.wikipedia.org/wiki/Scarface_(1983_movie)",
-	yID: "7pQQHnqBa2E",
-	yUrl: "https://www.youtube-nocookie.com/embed/7pQQHnqBa2E"
-
 };
 
 
