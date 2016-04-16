@@ -24,6 +24,11 @@ $(function(){
 	$('.btn-directions').on('click', function(){
 		$('.directions').toggleClass('hidden');
 	});
+
+	$('.btn-clear').on('click', function(){
+		$('.output h3').hide();
+		$('.searched, .results').empty();
+	})
 	
 });
 
