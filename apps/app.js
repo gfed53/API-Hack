@@ -8,7 +8,10 @@ $(function(){
 
 	$('#search-term .btn-search').on('click', function(e){
 		e.preventDefault();
-		
+		if($("input[name='autoClear']:checked").val() === "on"){
+			$('.output h3').hide();
+			$('.searched, .results').empty();			
+		}
 		var searchTerm = $('#query').val();
 		if($('.dropdown-toggle').html()==="Everything"){
 			$('.output h3').show();
@@ -28,8 +31,8 @@ $(function(){
 	$('.btn-clear').on('click', function(){
 		$('.output h3').hide();
 		$('.searched, .results').empty();
-	})
-	
+		console.log($("input[name='autoClear']:checked").val());
+	});
 });
 
 var yourChoice;
