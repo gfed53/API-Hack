@@ -24,6 +24,7 @@ $(function(){
 			getRequest(searchTermWithCat);
 		}
 	});
+
 	$('.btn-directions').on('click', function(){
 		$('.directions').toggleClass('hidden');
 	});
@@ -33,12 +34,10 @@ $(function(){
 		$('.searched, .results').empty();
 		console.log($("input[name='autoClear']:checked").val());
 	});
-});
+	var yourChoice;
 
-var yourChoice;
+	var showResponse = function(response) {
 
-var showResponse = function(response) {
-	
 	// clone our result-pt1 template code
 	var result1 = $('.templates h4').clone();
 	
@@ -64,31 +63,32 @@ var showResponse = function(response) {
 	});
 
 	return [result1, result2];
-};
-
-var getRequest = function(searchTerm){
-	var params = {
-		q: searchTerm,
-		k: "179625-Educatio-EE7ZUYWY",
-		info: 1
-
 	};
-	url= "https://www.tastekid.com/api/similar?callback=?";
-	$.getJSON(url, params, function(data){
-		$.each(data.Similar.Info, function(i, item) {
-			var response = showResponse(item);
-			$('.searched').append(response);
-			$('.accordion').accordion("refresh");
-		})
-		$.each(data.Similar.Results, function(i, item) {
+
+	var getRequest = function(searchTerm){
+		var params = {
+			q: searchTerm,
+			k: "179625-Educatio-EE7ZUYWY",
+			info: 1
+		};
+		url= "https://www.tastekid.com/api/similar?callback=?";
+		$.getJSON(url, params, function(data){
+			$.each(data.Similar.Info, function(i, item) {
+				var response = showResponse(item);
+				$('.searched').append(response);
+				$('.accordion').accordion("refresh");
+			})
+			$.each(data.Similar.Results, function(i, item) {
 				var response = showResponse(item);
 				$('.results').append(response);
 				$('.accordion').accordion("refresh");
+			});
 		});
-	});
-	$('#query').val('');
-	
-};
+		$('#query').val('');
+	};
+});
+
+
 
 
 
