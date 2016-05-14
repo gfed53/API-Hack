@@ -9,18 +9,22 @@ function SearchCtrl(ahSearch){
 	vm.submit = submit;
 
 	function submit(){
+		$(".output h3").show();
 		vm.category = document.getElementById("select-cat").value;
 		if(vm.category !== "everything"){
-			ahSearch(vm.category+":"+vm.searchTerm).getResults()
-			.then(function(response){
-				console.log(response);
-			})
+			vm.searchTermNew = vm.category+":"+vm.searchTerm;
 		} else {
-			ahSearch(vm.searchTerm).getResults()
-			.then(function(response){
-				console.log(response);
-			})
+			vm.searchTermNew = vm.searchTerm;
 		}
+
+		ahSearch(vm.searchTermNew).getResults()
+		.then(function(response){
+			// console.log(response);
+			vm.info = response.data.Similar.Info;
+			vm.results = response.data.Similar.Results;
+			console.log(vm.info);
+			console.log(vm.results);
+		})
 		console.log(vm.category);
 	}
 }

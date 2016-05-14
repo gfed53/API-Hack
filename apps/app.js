@@ -1,5 +1,5 @@
 angular
-.module("myApp", [])
+.module("myApp", ['ui.bootstrap'])
 
 // .config(['$httpProvider', function($httpProvider){
 // 	$httpProvider.defaults.useXDomain = true;
