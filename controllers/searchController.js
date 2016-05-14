@@ -19,11 +19,15 @@ function SearchCtrl(ahSearch){
 
 		ahSearch(vm.searchTermNew).getResults()
 		.then(function(response){
-			// console.log(response);
-			vm.info = response.data.Similar.Info;
-			vm.results = response.data.Similar.Results;
-			console.log(vm.info);
-			console.log(vm.results);
+			console.log(response);
+			if(vm.info = response.data.Similar.Info[0].Type === "unknown"){
+				alert("Sorry, the API had trouble finding what you were looking for. Please make sure the spelling is correct. Note that TasteKid's queries are very precise, and what you are looking for may be phrased differently. ex: 'Street Fighter IV' is recognized, but not 'Street Fighter 4'.");
+			} else {
+				vm.info = response.data.Similar.Info;
+				vm.results = response.data.Similar.Results;
+				console.log(vm.info);
+				console.log(vm.results);
+			}
 		})
 		console.log(vm.category);
 	}
