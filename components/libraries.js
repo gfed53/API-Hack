@@ -5,7 +5,7 @@ angular
 
 function ahSearch($http, $q){
 	return function(searchTerm){
-		    var url = "https://www.tastekid.com/api/similar?callback=?";
+		    var url = "https://www.tastekid.com/api/similar?";
 		    var request = {
 				q: searchTerm,
 				k: "179625-Educatio-EE7ZUYWY",
@@ -18,12 +18,13 @@ function ahSearch($http, $q){
 
 		    function getResults(){
 		    	return $http({
-		    		method: 'GET',
+		    		method: 'JSONP',
 		    		url: url,
 		    		params: request
 		    	})
 		    	.then(function(response){
 		    		var results = response;
+		    		// console.log(response);
 		    		return $q.when(response);
 		    	},
 		    	function(response){

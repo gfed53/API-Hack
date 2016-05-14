@@ -32,7 +32,7 @@
 			<p>i.e: movie:The Godfather, music:Megadeth, game:Super Mario 64, author:Hemmingway</p>
 			<p>Click the 'Add' button on any single result to automatically add it to the searchbar. The recommendations will multiply!</p>
 		</div>
-		<div class="search-main" ng-controller="SearchCtrl">
+		<div class="search-main" ng-controller="SearchCtrl as search">
 			<div class="row">
 				<div class="col-md-12">
 					<form id="search-term">
@@ -48,9 +48,9 @@
 									<option value="book">Book</option>
 								</select>
 							</div>
-							<input type="text" id="query" class="form-control" placeholder="Search for...">
+							<input type="text" id="query" ng-model="search.searchTerm" class="form-control" placeholder="Search for...">
 							<span class="input-group-btn">
-								<button class="btn btn-default btn-search" type="submit">Go!</button>
+								<button class="btn btn-default btn-search" ng-click="search.submit()">Go!</button>
 							</span>
 						</div>
 					</form>
