@@ -47,7 +47,9 @@ h3 {
 	text-align: left;
 }
 
-
+#select-cat {
+	width: 8em;
+}
 
 .hidden {
 	display: none;

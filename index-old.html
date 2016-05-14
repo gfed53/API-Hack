@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,38 +32,37 @@
 			<p>i.e: movie:The Godfather, music:Megadeth, game:Super Mario 64, author:Hemmingway</p>
 			<p>Click the 'Add' button on any single result to automatically add it to the searchbar. The recommendations will multiply!</p>
 		</div>
-		<div class="search-main" ng-controller="SearchCtrl">
-			<div class="row">
-				<div class="col-md-12">
-					<form id="search-term">
-						<div class="input-group">		
-							<div class="input-group-btn">
-								<select class="form-control select-cat" id="select-cat">
-									<option value="everything">Everything</option>
-									<option value="music">Music</option>
-									<option value="movie">Movie</option>
-									<option value="show">Show</option>
-									<option value="game">Game</option>
-									<option value="author">Author</option>
-									<option value="book">Book</option>
-								</select>
-							</div>
-							<input type="text" id="query" class="form-control" placeholder="Search for...">
-							<span class="input-group-btn">
-								<button class="btn btn-default btn-search" type="submit">Go!</button>
-							</span>
+		<div class="row">
+			<div class="col-md-12">
+				<form id="search-term">
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Type<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a id="everything" href="">Everything</a></li>
+								<li><a id="music" href="">Music</a></li>
+								<li><a id="movie" href="">Movie</a></li>
+								<li><a id="show" href="">Show</a></li>
+								<li><a id="game" href="">Game</a></li>
+								<li><a id="author" href="">Author</a></li>
+								<li><a id="book" href="">Book</a></li>
+							</ul>
 						</div>
-					</form>
-				</div>
+						<input type="text" id="query" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-default btn-search" type="submit">Go!</button>
+						</span>
+					</div>
+				</form>
 			</div>
-			<div class="row">
-				<div class="col-md-12 output">
-					<h3>You searched for:</h3>
-					<div class="accordion searched">
-					</div>
-					<h3>Results:</h3>
-					<div class="accordion results">
-					</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 output">
+				<h3>You searched for:</h3>
+				<div class="accordion searched">
+				</div>
+				<h3>Results:</h3>
+				<div class="accordion results">
 				</div>
 			</div>
 		</div>
@@ -94,7 +93,5 @@
 	<script src="node_modules/angular/angular.min.js"></script>
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script> -->
 	<script type="text/javascript" src="apps/app.js"></script>
-	<script src="./components/libraries.js"></script>
-	<script src="./controllers/searchController.js"></script>
 </body>
 </html>
