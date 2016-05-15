@@ -8,6 +8,7 @@ function SearchCtrl(ahSearch){
 	console.log("now");
 	var vm = this;
 	vm.submit = submit;
+	vm.add = add;
 
 	function submit(){
 		$(".output h3").show();
@@ -33,5 +34,10 @@ function SearchCtrl(ahSearch){
 
 		})
 		console.log(vm.category);
+	}
+
+	function add(name){
+		console.log(name);
+		vm.searchTerm += (name+", ");
 	}
 }
