@@ -18,7 +18,12 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Media Swirl</h1>
+		<div ui-view="header"></div>
+		<div ui-view="content"></div>
+	</div>
+	<div ui-view="footer"></div>
+
+<!-- 		<h1>Media Swirl</h1>
 		<h3>Fill this page with media you'll love.</h3>
 		<button class="btn btn-default btn-directions" type="button">Directions</button>
 		<button class="btn btn-default btn-clear" type="button">Clear All</button>
@@ -26,14 +31,14 @@
 			<label>Auto-Clear:</label>
 			<input type="radio" name="autoClear" value="on" checked> On
 			<input type="radio" name="autoClear" value="off">Off<br>
-		</form>
-		<div class="hidden directions">
+		</form> -->
+<!-- 		<div class="hidden directions">
 			<p>Select any category ('Everything' counts as one!) and make your search. You can search more than one item at a time. If you want to search items of multiple categories at once, make sure 'Everything' is selected.</p>
 			<p>While 'Everything' is selected, you can give your search parameters prefixes for clarification if so desired.</p>
 			<p>i.e: movie:The Godfather, music:Megadeth, game:Super Mario 64, author:Hemmingway</p>
 			<p>Click the 'Add' button on any single result to automatically add it to the searchbar. The recommendations will multiply!</p>
-		</div>
-		<div class="search-main" ng-controller="SearchCtrl as search">
+		</div> -->
+		<!-- <div class="search-main" ng-controller="SearchCtrl as search">
 			<div class="row">
 				<div class="col-md-12">
 					<form id="search-term">
@@ -90,11 +95,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<footer>
+	</div> -->
+<!-- 	<footer>
 		<p>By Gregory Federico</p>
 		<p>Powered by the <a href="http://www.tastekid.com">TASTEKiD</a> API</p>
-	</footer>
+	</footer> -->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -106,8 +111,10 @@
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.js"></script>
-	<script type="text/javascript" src="apps/app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
 	<script src="./components/libraries.js"></script>
-	<script src="./controllers/searchController.js"></script>
+	<script src="./components/routes.js"></script>
+	<script src="./partials/search/searchController.js"></script>
 </body>
 </html>
