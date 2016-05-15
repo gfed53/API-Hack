@@ -5,6 +5,7 @@ angular
 .controller("SearchCtrl", ["ahSearch", SearchCtrl])
 
 function SearchCtrl(ahSearch){
+	console.log("now");
 	var vm = this;
 	vm.submit = submit;
 
@@ -28,6 +29,9 @@ function SearchCtrl(ahSearch){
 				console.log(vm.info);
 				console.log(vm.results);
 			}
+			vm.searchTerm = "";
+			console.log(vm.searchTerm);
+			// $("#query").val("");
 		})
 		console.log(vm.category);
 	}
