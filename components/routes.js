@@ -2,7 +2,7 @@ angular
 .module("myApp")
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise("/")
+	$urlRouterProvider.otherwise("search")
 	var myRoot = {
 		name: "root",
 		url: "/",
@@ -23,6 +23,11 @@ angular
 			}
 		}
 	},
+	search = {
+		name: "search",
+		url: "search",
+		parent: "root"
+	}
 	directions = {
 		name: "directions",
 		url: "directions",
@@ -36,5 +41,6 @@ angular
 
 	$stateProvider
 	.state(myRoot)
+	.state(search)
 	.state(directions);
 }])
