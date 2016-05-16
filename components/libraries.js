@@ -24,7 +24,6 @@ function ahSearch($http, $q){
 	    	})
 	    	.then(function(response){
 	    		var results = response;
-	    		console.log(response);
 	    		return $q.when(response);
 	    	},
 	    	function(response){
