@@ -4,7 +4,7 @@ body {
 
 .container {
 	text-align: center;
-	margin: 0 auto;
+	margin: 3em auto;
 	border: 7px ridge bisque;
 	background-color: #D9EDF7;
 	border-radius: 1em;
@@ -15,7 +15,12 @@ body {
 	margin-bottom: 2em;
 }
 
+h1, h3 {
+	margin: 0.5em auto;	
+}
+
 h1 {
+
 	font-family: "Kaushan Script", serif;
 	font-size: 5em;
 	text-transform: uppercase;
@@ -40,6 +45,10 @@ h3 {
 	text-align: center;
 }
 
+.nav-tabs {
+	border-bottom: ;
+}
+
 .nav-tabs>li {
 	float: none;
 	display: inline-block;
@@ -48,10 +57,18 @@ h3 {
 .nav-tabs>li>a {
 	color: #446CB3;
 	font-weight: bold;
+	/*border: 1px solid #ddd;*/
 }
 
-.active {
-	background-color: #eee;
+.active,
+.nav>li>a:focus, .nav>li>a:hover {
+	background-color: #5F5F5F;	
+	/*background-color: #D0D08F;*/
+}
+
+.nav-tabs>li>.active {
+	color: white;
+	border: 1px solid #ddd;
 }
 
 #auto-clear-form label,
