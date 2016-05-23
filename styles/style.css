@@ -63,7 +63,7 @@ h3 {
 .active,
 .nav>li>a:focus, .nav>li>a:hover {
 	background-color: #5F5F5F;	
-	/*background-color: #D0D08F;*/
+	color: white;
 }
 
 .nav-tabs>li>.active {
