@@ -95,7 +95,7 @@ h3 {
 }
 
 .output h3 {
-	display: none;
+	/*display: none;*/
 	text-align: center;
 	font-size: 1.5em;
 }

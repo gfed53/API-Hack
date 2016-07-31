@@ -8,6 +8,9 @@ function SearchCtrl(ahSearch){
 	var vm = this;
 	vm.submit = submit;
 	vm.add = add;
+	vm.pastSearches = ahResultHistory.getSearched();
+	vm.pastResults = ahResultHistory.getResults();
+	vm.searchTerm = ahSearchTerm.get();
 
 	function submit(){
 		$(".output h3").show();

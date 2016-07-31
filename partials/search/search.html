@@ -4,7 +4,7 @@
 			<form id="search-term">
 				<div class="input-group">		
 					<div class="input-group-btn">
-						<select class="form-control select-cat" id="select-cat">
+						<select class="form-control select-cat" id="select-cat" ng-model="search.cat">
 							<option value="everything">Everything</option>
 							<option value="music">Music</option>
 							<option value="movie">Movie</option>
@@ -24,7 +24,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 output">
-			<h3>You searched for:</h3>
+			<h3 ng-if="search.info">You searched for:</h3>
 			<uib-accordion>
 				<uib-accordion-group ng-repeat="item in search.info" heading="{{ item.Name }}">
 					<div class="row inner-content">
@@ -38,7 +38,7 @@
 					</div>
 				</uib-accordion-group>
 			</uib-accordion>
-			<h3>Results:</h3>
+			<h3 ng-if="search.results">Results:</h3>
 			<uib-accordion>
 				<uib-accordion-group ng-repeat="item in search.results" heading="{{ item.Name }}">
 					<div class="row inner-content">
