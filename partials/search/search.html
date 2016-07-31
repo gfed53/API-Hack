@@ -2,21 +2,12 @@
 	<div class="row">
 		<div class="col-md-12">
 			<form id="search-term">
+				<label for="">Select Category: </label>
+				<select ng-model="search.cat" ng-options="item.label for item in search.cats" class="form-control select-cat"></select>
 				<div class="input-group">		
-					<div class="input-group-btn">
-						<select class="form-control select-cat" id="select-cat" ng-model="search.cat">
-							<option value="everything">Everything</option>
-							<option value="music">Music</option>
-							<option value="movie">Movie</option>
-							<option value="show">Show</option>
-							<option value="game">Game</option>
-							<option value="author">Author</option>
-							<option value="book">Book</option>
-						</select>
-					</div>
 					<input type="text" id="query" ng-model="search.searchTerm" class="form-control" placeholder="Search for...">
 					<span class="input-group-btn">
-						<button class="btn btn-default btn-search" ng-click="search.submit()">Go!</button>
+						<button class="btn btn-default btn-search" ng-click="search.submit(search.cat.name)">Go!</button>
 					</span>
 				</div>
 			</form>

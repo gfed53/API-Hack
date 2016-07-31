@@ -11,6 +11,30 @@ function SearchCtrl($scope, ahSearch, ahResultHistory, ahSearchTerm){
 	vm.pastSearches = ahResultHistory.getSearched();
 	vm.pastResults = ahResultHistory.getResults();
 	vm.searchTerm = ahSearchTerm.get();
+	vm.cats = [{
+		name: "",
+		label: "Everything"
+	}, {
+		name: "music",
+		label: "Music"
+	}, {
+		name: "movie",
+		label: "Movie"
+	}, {
+		name: "show",
+		label: "Show"
+	}, {
+		name: "game",
+		label: "Game"
+	}, {
+		name: "author",
+		label: "Author"
+	}, {
+		name: "book",
+		label: "Book"
+	}
+	];
+	vm.cat = vm.cats[0];
 
 	$scope.$watch("search.searchTerm", function(newVal){
 		//Watches for changes in the search bar, so if the user switches over to a different tab and then return to it, they won't lose what they inputed.

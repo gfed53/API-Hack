@@ -86,8 +86,10 @@ h3 {
 	text-align: left;
 }
 
-#select-cat {
+.select-cat {
 	width: 8em;
+	display: inline-block;
+	margin-bottom: 1em;
 }
 
 .hidden {

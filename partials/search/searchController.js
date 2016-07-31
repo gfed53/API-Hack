@@ -12,6 +12,7 @@ function SearchCtrl(ahSearch){
 	vm.pastResults = ahResultHistory.getResults();
 	vm.searchTerm = ahSearchTerm.get();
 
+
 	function submit(){
 		$(".output h3").show();
 		vm.category = document.getElementById("select-cat").value;
